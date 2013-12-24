@@ -37,7 +37,14 @@ system ("$dir/zpack/mkbootimg --cmdline '' --kernel $dir/arch/arm/boot/zImage --
 unlink("ramdisk-repack.gz") or die $!;
 
 print "\ncreating flashable zip file\n";
-system ("cp drivers/net/wireless/bcm4329/bcm4329.ko $dir/zpack/zcwmfiles/system/lib/modules/");
+system ("cp arch/arm/common/cpaccess.ko $dir/zpack/zcwmfiles/system/lib/modules/");
+system ("cp arch/arm/mach-msm/reset_modem.ko $dir/zpack/zcwmfiles/system/lib/modules/");
+system ("cp drivers/crypto/msm/qce.ko $dir/zpack/zcwmfiles/system/lib/modules/");
+system ("cp drivers/crypto/msm/qcedev.ko $dir/zpack/zcwmfiles/system/lib/modules/");
+system ("cp drivers/crypto/msm/qcrypto.ko $dir/zpack/zcwmfiles/system/lib/modules/");
+system ("cp drivers/net/wireless/bcm4329_248/bcm4329.ko $dir/zpack/zcwmfiles/system/lib/modules/");
+system ("cp drivers/net/wimax/SQN/sequans_sdio.ko $dir/zpack/zcwmfiles/system/lib/modules/");
+system ("cp drivers/net/wireless/libra/librasdioif.ko $dir/zpack/zcwmfiles/system/lib/modules/");
 system ("cp boot.img $dir/zpack/zcwmfiles/");
 chdir ("$dir/zpack/zcwmfiles");
 system ("zip -9 -r $dir/Evodesign.zip *");
