@@ -117,9 +117,9 @@ static struct clk *acpuclk_sources[MAX_SOURCE];
  */
 static struct clkctl_acpu_speed acpu_freq_tbl[] = {
 	{ 0, 24576,  LPXO, 0, 0,  30720000,  1000, VDD_RAW(1000) },
-	{ 0, 61440,  PLL_3,    5, 11, 61440000,  1000, VDD_RAW(1000) },
-	{ 0, 122880, PLL_3,    5, 5,  61440000,  1000, VDD_RAW(1000) },
-	{ 0, 184320, PLL_3,    5, 4,  61440000,  1000, VDD_RAW(1000) },
+	{ 1, 61440,  PLL_3,    5, 11, 61440000,  1000, VDD_RAW(1000) },
+	{ 1, 122880, PLL_3,    5, 5,  61440000,  1000, VDD_RAW(1000) },
+	{ 1, 184320, PLL_3,    5, 4,  61440000,  1000, VDD_RAW(1000) },
 	{ 0, MAX_AXI_KHZ, AXI, 1, 0, 61440000, 1000, VDD_RAW(1000) },
 	{ 1, 245760, PLL_3,    5, 2,  61440000,  1000, VDD_RAW(1000) },
 	{ 1, 368640, PLL_3,    5, 1,  122800000, 1050, VDD_RAW(1050) },
@@ -133,6 +133,8 @@ static struct clkctl_acpu_speed acpu_freq_tbl[] = {
 	{ 1, 1200000, PLL_2, 3, 0, UINT_MAX, 1200, VDD_RAW(1200), &pll2_tbl[2]},
 	{ 1, 1401600, PLL_2, 3, 0, UINT_MAX, 1250, VDD_RAW(1250), &pll2_tbl[3]},
 	{ 1, 1497600, PLL_2, 3, 0, UINT_MAX, 1250, VDD_RAW(1250), &pll2_tbl[4]},
+        { 1, 1708800, PLL_2, 3, 0, UINT_MAX, 1350, VDD_RAW(1350), &pll2_tbl[5]},
+	{ 1, 1804800, PLL_2, 3, 0, UINT_MAX, 1350, VDD_RAW(1350), &pll2_tbl[6]},
 	{ 0 }
 };
 
